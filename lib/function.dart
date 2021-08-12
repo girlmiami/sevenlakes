@@ -21,22 +21,13 @@ List function(input1, inputToCompute) {
         var h;
         input1.forEach((element) {
           if (element["name"] == "length") {
-            if (element["type"] == "number") {
-              l = element["value"];
-            } else {}
+            l = element["value"];
           } else if (element["name"] == "width") {
             b = element["value"];
           } else if (element["name"] == "height") {
             h = element["value"];
           }
         });
-
-        // sb
-        //   ..write(volume({
-        //     'length': l,
-        //     'width': b,
-        //     'height': h,
-        //   }));
         computedMap["value"] = volume({
           'length': l,
           'width': b,
@@ -64,8 +55,6 @@ List function(input1, inputToCompute) {
           'height',
           'mass',
         ]);
-        // final sb1 = StringBuffer();
-        // final sb2 = StringBuffer();
 
         // get l b h
         var l;
@@ -94,33 +83,19 @@ List function(input1, inputToCompute) {
         var r = evaluator.eval(logicalExpression, context);
 
         print(r);
-        // sb1
-        //   ..write(expression1({
-        //     'length': l,
-        //     'width': b,
-        //     'height': h,
-        //     'mass': mass,
-        //   }).toStringAsFixed(2));
-        // sb2
-        //   ..write(expression2({
-        //     'length': l,
-        //     'width': b,
-        //     'height': h,
-        //     'mass': mass,
-        //   }).toStringAsFixed(2));
         computedMap["value"] = r
             ? expression1({
-                'length': l,
-                'width': b,
-                'height': h,
-                'mass': mass,
-              }).toStringAsFixed(2)
+          'length': l,
+          'width': b,
+          'height': h,
+          'mass': mass,
+        }).toStringAsFixed(2)
             : expression2({
-                'length': l,
-                'width': b,
-                'height': h,
-                'mass': mass,
-              }).toStringAsFixed(2);
+          'length': l,
+          'width': b,
+          'height': h,
+          'mass': mass,
+        }).toStringAsFixed(2);
       }
 
       computedList.add(computedMap);

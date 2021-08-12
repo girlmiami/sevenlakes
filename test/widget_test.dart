@@ -35,7 +35,7 @@ void main() {
         {
           "name": "density",
           "expression":
-              "IIF(densityOption == 'specGravity', mass / (length * width * height * 0.9),	mass / (length * width * height) )"
+          "IIF(densityOption == 'specGravity', mass / (length * width * height * 0.9),	mass / (length * width * height) )"
         }
       ]),
       output,

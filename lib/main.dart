@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
       {
         "name": "density",
         "expression":
-            "IIF(densityOption == 'specGravity', mass / (length * width * height * 0.9),	mass / (length * width * height) )"
+        "IIF(densityOption == 'specGravity', mass / (length * width * height * 0.9),	mass / (length * width * height) )"
       }
     ];
     return Scaffold(
@@ -145,20 +145,40 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: Container(
-        width: 200,
-        child: ElevatedButton(
-          onPressed: () {
-            computedList = function(
-              input1,
-              inputToCompute,
-            );
-            print(computedList);
-            setState(() {});
-          },
-          child: Text("Compute"),
-        ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: 100,
+              child: ElevatedButton(
+                onPressed: () {
+                  computedList = [];
+                  setState(() {});
+                },
+                child: Text("Clear"),
+              ),
+            ),
+          ),
+          Container(
+            width: 100,
+            child: ElevatedButton(
+              onPressed: () {
+                computedList = function(
+                  input1,
+                  inputToCompute,
+                );
+                print(computedList);
+                setState(() {});
+              },
+              child: Text("Compute"),
+            ),
+          ),
+
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
 }
